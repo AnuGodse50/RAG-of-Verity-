@@ -1,0 +1,4 @@
+The sample project uses a persistent Chroma collection to store document chunks.
+Documents are split into overlapping pieces and embedded with the configured model.
+Hybrid retrieval combines semantic vector search with BM25 keyword search using reciprocal rank fusion.
+Every generated answer should cite the source file and the page or chunk identifier.

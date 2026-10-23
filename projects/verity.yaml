@@ -1,0 +1,43 @@
+name: verity
+collection: verity_customer_e5_v1
+agent_profile: sarthi
+loaders:
+  allowed_extensions: [.md, .markdown, .txt, .pdf, .docx]
+  allowed_sources:
+    - KYC-Dataset-India-EU.md
+    - KYC Process Guide India and Europe.md
+  ocr: true
+chunking:
+  strategy: structure
+  chunk_size: 1200
+  overlap: 180
+embedding:
+  provider: sentence_transformers
+  model: intfloat/multilingual-e5-small
+  local_files_only: true
+store:
+  provider: chroma
+  path: ./data/chroma
+retrieval:
+  top_k: 6
+  candidate_k: 40
+  rrf_k: 60
+  min_similarity: 0.32
+  reranker: false
+llm:
+  provider: openai_compatible
+  model: gemini-3.8-flash
+  base_url: https://generativelanguage.googleapis.com/v1beta/openai/
+  api_key_env: GEMINI_API_KEY
+  temperature: 0
+  max_tokens: 1600
+prompt_template: |-
+  Customer context (authoritative for this customer's current journey only):
+  {customer_context}
+
+  Retrieved knowledge:
+  {context}
+
+  Customer question: {question}
+  Sarthi's answer:
+metadata_schema: {}

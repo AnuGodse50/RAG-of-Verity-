@@ -1,0 +1,55 @@
+{
+  "description": "Starter retrieval evaluation set for the Verity knowledge base. Expected sources are paths relative to the repository root when ingesting samples/verity.",
+  "cases": [
+    {
+      "id": "india-company-documents",
+      "question": "What documents does the India KYC guide list for a company and its beneficial owners?",
+      "expected_sources": ["samples/verity/KYC Process Guide India and Europe.md"]
+    },
+    {
+      "id": "india-individual-address-proof",
+      "question": "Which identity documents and address evidence are mentioned for individuals in India?",
+      "expected_sources": ["samples/verity/KYC Process Guide India and Europe.md"]
+    },
+    {
+      "id": "india-record-retention",
+      "question": "How long does the India guide say identity and transaction records are retained?",
+      "expected_sources": ["samples/verity/KYC Process Guide India and Europe.md"]
+    },
+    {
+      "id": "eu-central-kyc-registry",
+      "question": "Does the EU have a central KYC registry comparable to India's CKYCR?",
+      "expected_sources": ["samples/verity/KYC Process Guide India and Europe.md"]
+    },
+    {
+      "id": "eu-national-differences",
+      "question": "Which KYC details vary by EU country, such as accepted IDs and verification deadlines?",
+      "expected_sources": ["samples/verity/KYC Process Guide India and Europe.md"]
+    },
+    {
+      "id": "regional-cells",
+      "question": "Where are the proposed India and EU regional cells located in the Verity architecture?",
+      "expected_sources": ["samples/verity/Verity System Process and Architecture Blueprint.md"]
+    },
+    {
+      "id": "credential-and-regulatory-storage",
+      "question": "What are the two storage layers in the architecture, and what kind of data belongs in each?",
+      "expected_sources": ["samples/verity/Verity System Process and Architecture Blueprint.md"]
+    },
+    {
+      "id": "consent-service",
+      "question": "What does the consent service do in the target system architecture?",
+      "expected_sources": ["samples/verity/Verity System Process and Architecture Blueprint.md"]
+    },
+    {
+      "id": "india-data-protection",
+      "question": "What does the India and EU legal map say about India's DPDP Act and personal data processing?",
+      "expected_sources": ["samples/verity/Verity India and EU Legal Map.md"]
+    },
+    {
+      "id": "cross-border-data",
+      "question": "What considerations does the legal map identify for moving personal data across borders?",
+      "expected_sources": ["samples/verity/Verity India and EU Legal Map.md"]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+name: default
+collection: default
+loaders:
+  ocr: true
+chunking:
+  strategy: recursive
+  chunk_size: 1000
+  overlap: 150
+embedding:
+  provider: sentence_transformers
+  model: BAAI/bge-m3
+store:
+  provider: chroma
+  path: ./data/chroma
+retrieval:
+  top_k: 5
+  candidate_k: 30
+  rrf_k: 60
+  reranker: false
+llm:
+  provider: openai_compatible
+  model: gemini-3.8-flash
+  base_url: https://generativelanguage.googleapis.com/v1beta/openai/
+  api_key_env: GEMINI_API_KEY
+  temperature: 0
+  max_tokens: 1200
+prompt_template: |-
+  Answer only from the context below. If it does not support an answer, say: I couldn't find this in the provided data. Cite supporting claims with [source, page/chunk id].
+
+  Context:
+  {context}
+
+  Question: {question}
+  Answer:
+metadata_schema: {}
